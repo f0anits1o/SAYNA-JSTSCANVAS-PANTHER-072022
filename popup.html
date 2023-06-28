@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop up</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+   
+     <div id="containerPopup">
+         <p id="phrase">
+             Ton initiation est terminée!
+         </p>
+         <button id="back">Revenir à l'accueil</button>
+         <div id="container_time">
+            <img src="../ASSETS/Illustration + Logo/3_Page_Enigme/figma_logo.svg" alt="svg"> 
+            <div id="time">
+                <p>COMMING SOON...</p>
+                <div id="compte-a-rebours">day hours minutes secondes</div>
+            </div>
+         </div>
+     </div>
+     <script>
+         var compteARebour = document.getElementById("compte-a-rebours");
+ var date=new Date();
+ date.setFullYear(2023,5,30);
+
+ function compteARebours() {
+    const interval = setInterval(() => {
+    const tempsRestant = date  - new Date();
+    const jours = Math.floor(tempsRestant / (1000 * 60 * 60 * 24));
+    const heures = Math.floor((tempsRestant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((tempsRestant % (1000 * 60 * 60)) / (1000 * 60));
+    const secondes = Math.floor((tempsRestant % (1000 * 60)) / 1000);
+     compteARebour.innerHTML = jours + "j " + heures + "h " + minutes + "m " + secondes + "s ";
+     if (tempsRestant < 0) {
+        clearInterval(interval);
+        compteARebour.innerText = "Temps écoulé !";
+      }
+   }, 1000);
+}
+compteARebours();
+
+     </script>
+</body>
+</html>

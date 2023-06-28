@@ -1,0 +1,39 @@
+#containerPopup{
+    width: 60vw;
+    height: 60vh;
+    box-shadow: 0 0 10vw rgba(1, 14, 255, 2.8);
+    border-radius: 4vw;
+    text-align: center;
+    background: linear-gradient(190deg, rgba(130,60,255,0.7),rgba(1, 14, 54, 2.8) );
+}
+#containerPopup #phrase{
+  text-transform: uppercase;
+  padding-top: 6vh;
+}
+#containerPopup #back{
+    background-color:ivory ;
+    width: 20vw;
+    height: 7vh;
+    margin-top: 4vh;
+    border-radius: 3vh;
+    text-transform: uppercase;
+    color:rgba(100, 104, 200, 2.8);
+    font-size: 2vh;
+    font-weight: bold;
+    margin-bottom: 6vh;
+}
+#containerPopup #container_time{
+    display: flex;
+    justify-content: center;
+}
+#containerPopup #container_time img{
+    padding-top: 2vh;
+    width: 5vw;
+    height: 10vh;
+    margin: 0 2vw;
+}
+#containerPopup #container_time #time .timecounter{
+    font-weight: bold;
+    display: flex;
+    font-size: 3vw;
+}

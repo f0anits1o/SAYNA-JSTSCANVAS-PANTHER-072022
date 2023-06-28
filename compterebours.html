@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+</head>
+<body>
+<div id="compte-a-rebours">dd</div>
+
+<script type="text/javascript">
+
+ var compteARebour = document.getElementById("compte-a-rebours");
+ var date=new Date();
+ date.setFullYear(2023,5,30);
+
+ function compteARebours() {
+    const interval = setInterval(() => {
+    const tempsRestant = date  - new Date();
+    // dater=document.createElement('div');
+    // dater.innerHTML=tempsRestant;
+    // document.body.appendChild(dater);
+    const jours = Math.floor(tempsRestant / (1000 * 60 * 60 * 24));
+    const heures = Math.floor((tempsRestant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((tempsRestant % (1000 * 60 * 60)) / (1000 * 60));
+    const secondes = Math.floor((tempsRestant % (1000 * 60)) / 1000);
+     compteARebour.innerHTML = jours + "j " + heures + "h " + minutes + "m " + secondes + "s ";
+     if (tempsRestant < 0) {
+        clearInterval(interval);
+        compteARebour.innerText = "Temps écoulé !";
+      }
+   }, 1000);
+}
+compteARebours();
+
+// var myDate=new Date(); myDate.setFullYear(2010,0,14); 
+// var today = new Date(); if (myDate>today)   {   alert("Today is before 14th January 2010"); 
+//   } else   {   alert("Today is after 14th January 2010");  
+//   nosjour=document.createElement('div');
+//    nosjour.innerHTML=today;
+//   document.body.appendChild(nosjour); }
+</script>
+
+
+</body>
+</html>
